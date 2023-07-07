@@ -1,0 +1,61 @@
+.contactform{
+    height: 440px;
+    text-align: center;
+}
+.contactformbox{
+    background: rgba(145, 113, 173, 0.4);
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    position: relative;
+    top: 17%;
+    left: 24%;
+    height: 300px;
+    border-radius: 8px;
+}
+.contactformbox img{
+ width: 30px;
+}
+.contactformbox input{
+ width: 70%;
+ height: 35px;
+    margin-top: 20px;
+    margin-left: 15%;
+}
+
+.contacformBack {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.contacformBack span{
+    font-size: 32px;
+    font-weight: 400;
+    margin-left: 49px;
+}
+.contacformBack img{
+    margin-right: 14px;
+}
+.contactformboxbutton{
+    margin-top: 18px;
+}
+.contactformboxbutton button{
+    width: 77px;
+    height: 37px;
+    border: 0;
+   color: white;
+    /* border: none; */
+    /* background: red; */
+    border-radius: 7px;
+    outline: 0;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+   
+.green{
+    background-color: green;
+}
+.red{
+    background-color:red;
+}

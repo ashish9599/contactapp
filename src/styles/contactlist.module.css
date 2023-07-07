@@ -1,0 +1,33 @@
+.contactlist{
+    display: flex;
+    background-color: cadetblue;
+    width: 70%;
+    position: relative;
+    left: 15%;
+    margin-top: 10px;
+    border: 1px solid blue;
+    border-radius: 14px;
+    justify-content: space-between;
+}
+.contactlist img{
+ width: 90px;
+}
+.contactName{
+    display: flex;
+   text-decoration: none;
+   color: black;
+}
+.contactDetails{
+    margin-left: 30px;
+    font-size: 30px;
+    font-weight: 400;
+}
+.upAndDel{
+letter-spacing: 4px;    
+}
+.upAndDel img{
+    width: 40px;
+}
+.cursor{
+    cursor: pointer;
+}

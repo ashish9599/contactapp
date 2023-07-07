@@ -1,0 +1,32 @@
+.details{
+    text-align: center;
+    width: 50%;
+    position: relative;
+    background: rgba(175, 231, 175, 0.5);
+    left: 23%;
+    top: 14%;
+    margin-top: 38px;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+.details img{
+    width: 100px;
+    height: 100px;
+}
+.detailsBack{
+    justify-content: space-around;
+    display: flex;
+}
+.detailsBack  img{
+    width: 30px;
+    height: 40px;
+}
+.detailsBack h1{
+margin: 0;
+padding: 0;
+}
+
+.details p{
+font-size: 20px;
+font-weight: 500;
+}

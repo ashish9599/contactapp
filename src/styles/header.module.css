@@ -1,0 +1,82 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    background: burlywood;
+}
+.leftHeader{
+    width: 20%;
+}
+.leftHeader h1{
+    font-size: 30px;
+}
+.leftHeader a{ 
+  display: flex;
+  text-decoration: none;
+  color: black;
+}
+.leftHeader img{
+    /* width: 73px; */
+     /* min-width: 70px; */
+     max-width: 70px;
+     max-height: 70px;
+     max-height: 70px;
+    margin-top: 7px;
+}
+.middleHeader{
+    width: 54%;
+}
+.middleHeader img{
+    width: 30px;
+}
+.middleHeader input{
+    height: 35px;
+    width: 88%;
+    margin-top: 22px;
+    border-radius: 5px;
+    border-block-start: none;
+}
+.middleHeader img{
+    margin-left: 8px;
+    margin-block-end: -11px;
+}
+.middleHeader button{
+    padding-bottom: 10px;
+}
+.rightHeader{
+    width: 18%;
+    text-align: end;
+    /* background: burlywood; */
+}
+.rightHeaderHome{
+    margin-top: 19px;
+    margin-right: 23px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.rightHeaderHome a{
+    text-decoration: none;
+color: black;
+}
+.zIndex{
+
+    margin-left: 0;
+}
+.search{
+    text-decoration: none;
+    color: black;
+    position: relative;
+    z-index: 1;
+}
+
+.search li{
+   background-color:white;
+ color: black;
+ list-style: none;
+ border: 1px solid rgba(215, 208, 208,0.5);
+margin-left: -40px;
+height: 30px;
+}
+.search li:hover{
+    background-color: rgb(225, 224, 224);
+}
