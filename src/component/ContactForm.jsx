@@ -17,9 +17,10 @@ const navigate=useNavigate()
       toast.info("Please fill the form")
       return;
     }
-    const id=Date.now;
+    const id=Date.now();
     setAdding(false);
     const respone= await addcontact(id,name,email,phone);
+    // console.log(respone);
     if(respone.success){
       const {obejc}=respone.data            
       contacts.addContactHook({id,name,email,phone});
