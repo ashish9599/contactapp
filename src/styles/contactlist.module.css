@@ -1,11 +1,11 @@
 .contactlist{
     display: flex;
-    background-color: cadetblue;
+    background-color: rgb(196, 214, 215);
     width: 70%;
     position: relative;
     left: 15%;
     margin-top: 10px;
-    border: 1px solid blue;
+    border: 1px solid rgb(160, 160, 253);
     border-radius: 14px;
     justify-content: space-between;
 }

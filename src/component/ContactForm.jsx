@@ -1,39 +1,43 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from '../styles/contactform.module.css'
-import { Link, Navigate, useNavigate } from 'react-router-dom';
-import { addcontact } from '../api/contactApi';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContact } from '../hook/contactHook';
 import { toast } from 'react-toastify';
- 
 const  ContactForm=()=>{
   const [name,setName]=useState('');  
   const [email,setEmail]=useState('');  
   const [phone,setPhone]=useState('');
   const [adding,setAdding]=useState(true);
-const navigate=useNavigate()
+const inputref=useRef(null);
+useEffect(()=>{
+inputref.current.focus();
+},[])
+
+
+  const navigate=useNavigate()
   const contacts=useContact();
-  const handleAdd=async()=>{
-    if(name==""&&email==""&&phone==""){
+  const handleAdd=async(e)=>{
+e.preventDefault();
+
+    if(name===""&&email===""&&phone===""){
       toast.info("Please fill the form")
       return;
     }
+if(phone.length<9){
+  toast.info("Please Enter a valid no");
+  return ;
+}
+
     const id=Date.now();
     setAdding(false);
-    const respone= await addcontact(id,name,email,phone);
-    // console.log(respone);
-    if(respone.success){
-      const {obejc}=respone.data            
       contacts.addContactHook({id,name,email,phone});
       toast.success("ADDED Succesfull")
       navigate('/')
-    }else{
       setName('');
       setEmail('');
       setPhone('');
-      toast.error(respone.message);
-    }; 
-    setAdding(true);
     
+    setAdding(true);
   }
   const handleClear=()=>{
     setEmail('');
@@ -45,14 +49,16 @@ const navigate=useNavigate()
 
   return (
       <div className={styles.contactform}>
-          <div className={styles.contactformbox}>
+            <form action="" onSubmit={(e)=>handleAdd(e)}className={styles.contactformbox} >
             <div className={styles.contacformBack}>
              <Link to={`/`}>
               <img src="https://cdn-icons-png.flaticon.com/128/17/17699.png" alt="" />
              </Link>
               <span>Add Contact</span>
             </div>
-              <input type="text" 
+              
+              <input type="text"
+              ref={inputref} 
               value={name} onChange={(e)=>setName(e.target.value)}
               placeholder="Name" required/>
               <input type="email"
@@ -60,17 +66,17 @@ const navigate=useNavigate()
               placeholder="email" required/>
               <input type="number"
               value={phone} onChange={(e)=>setPhone(e.target.value)}
-               placeholder="phone" required/>
+              placeholder="phone" required/>
               <div className={styles.contactformboxbutton}>
                 <button onClick={()=>handleClear()} className={styles.red}>Clear</button>
-                <button onClick={()=>handleAdd()} className={styles.green}>
+                <button type='submit'  className={styles.green}>
                  {adding?"Add":"Adding..."}</button>
               </div>
+              </form>
 
           </div>
 
 
-      </div>
     );
   }
   

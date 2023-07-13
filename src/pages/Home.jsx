@@ -1,6 +1,5 @@
 import ContactList from "./Contactlist";
 import styles from '../styles/home.module.css'
-// import ContactForm from "../component/ContactForm";
 import { Link } from "react-router-dom";
 import { useContact } from "../hook/contactHook";
 

@@ -1,4 +1,5 @@
-import { API_Url } from "../utils/contactUtils";
+const API_Url="https://jsonplaceholder.typicode.com/users";
+
 const customFetch = async (url, { body, ...customConfig }) => {
    
     const headers = {
@@ -40,30 +41,7 @@ const customFetch = async (url, { body, ...customConfig }) => {
   };
 
 export const getUser=()=>{
-    return customFetch(API_Url.getContact(),{
+    return customFetch(API_Url,{
         method:'GET'
     });
 }
-export const getContact=(id)=>{
-    return customFetch(API_Url.getSingleContact(id),{
-        method:'GET'
-    });
-}
-export const addcontact=(i,nam,emai,phon)=>{
-    return customFetch(API_Url.addContact(),{
-        method:'POST',
-        body:{id:i,name:nam,email:emai,phone:phon}
-    });
-}
-export const update=(i,nameU,emailU,phoneU)=>{
-    return customFetch(API_Url.UpdateContact(i),{
-        method:'PUT',
-        body:{name:nameU,email:emailU,phone:phoneU}
-    });
-}
-
-export const remove= (userId) => {
-  return customFetch(API_Url.deleteContact(userId), {
-    method: 'DELETE',
-  });
-};

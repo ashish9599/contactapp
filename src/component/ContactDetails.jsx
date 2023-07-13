@@ -1,25 +1,24 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useContact } from "../hook/contactHook";
-import { getContact } from "../api/contactApi";
 import { Link } from "react-router-dom";
 import styles from '../styles/contactdetail.module.css'
 const  ContactDetails=()=>{
     const {id}=useParams();
+    // console.log(id);
     const [contactD,setContactDetails]=useState([]);
- 
 const user=useContact();
-    useEffect(()=>{
-    const contactDet=async()=>{
-    const respone=await getContact(id);
-    //   console.log(respone);
-    if(respone.success){
-        setContactDetails(respone.data);
-    }    
-}   
-    contactDet(); 
+// console.log("u",user.contact);     
+useEffect(()=>{
+    const contactDet=()=>{
+   const newContact=user.contact.filter((contact)=>contact.id==Number(id));
+  //  console.log("n",newContact);     
+    setContactDetails(newContact);
+      }   
+      contactDet(); 
     },[id])
-    // console.log(contactD);
+    const ncontact=contactD[0];
+    
     return (
       <div className={styles.details}>
                 <div className={styles.detailsBack}>
@@ -30,11 +29,14 @@ const user=useContact();
                     <h1>Details</h1>
                 </div>
                 <img src="https://cdn-icons-png.flaticon.com/128/9581/9581121.png" alt="" />
-                <p>{contactD.name}</p>
-                <p>{contactD.email}</p>
-                <p>{contactD.username}</p>
-                <p>{contactD.phone}</p>
-                <p>{contactD.website}</p>
+             {contactD.length>0 &&<>
+               <p>{ncontact.name}</p>
+                <p>{ncontact.email}</p>
+                <p>{ncontact.username}</p>
+                <p>{ncontact.phone}</p>
+                <p>{ncontact.website}</p>
+             </>             
+                }
       </div>
     );              
   }

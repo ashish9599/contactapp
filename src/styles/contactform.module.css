@@ -3,8 +3,9 @@
     text-align: center;
 }
 .contactformbox{
-    background: rgba(145, 113, 173, 0.4);
+    background: rgb(212, 211, 211);
     display: flex;
+    border: 1px solid rgb(186, 186, 186);
     flex-direction: column;
     width: 50%;
     position: relative;

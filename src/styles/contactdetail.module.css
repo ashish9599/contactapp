@@ -2,7 +2,8 @@
     text-align: center;
     width: 50%;
     position: relative;
-    background: rgba(175, 231, 175, 0.5);
+    background: rgb(218, 218, 218);
+    border: 1px solid rgb(194, 193, 193);
     left: 23%;
     top: 14%;
     margin-top: 38px;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { useContact } from '../hook/contactHook';
 import styles from '../styles/header.module.css'
 import { Link } from 'react-router-dom';
@@ -8,17 +8,14 @@ const [search,setSearch]=useState("");
 const [searchDone,setSearchDone]=useState(true);
 const handleSubmit=(e)=>{
   e.preventDefault();
-  setSearchDone(false);
-  if(searchDone){
     setSearch('') 
-  }
-  setSearchDone(true)
+  setSearchDone(false)
 }
-
-// console.log(user.contact.;
+ 
 const handleSearching=()=>{
   setSearchDone(false);
   setSearch('');
+  setSearchDone(true);
 }
   return (
       <div className={styles.header}>
@@ -42,7 +39,7 @@ const handleSearching=()=>{
                </button>
 
              </form>
-             {user.contact.length>0 && searchDone&& search.length>2&& 
+             {search.length>2&&user.contact.length>0 && searchDone&& 
              <ul className={styles.zIndex}>
 
                {user.contact.map((user,i)=>(
