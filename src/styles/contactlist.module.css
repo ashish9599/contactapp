@@ -1,13 +1,15 @@
 .contactlist{
     display: flex;
-    background-color: rgb(196, 214, 215);
-    width: 70%;
+  
+    background-color: rgb(238, 238, 238);
+        width: 70%;
     position: relative;
     left: 15%;
-    margin-top: 10px;
-    border: 1px solid rgb(160, 160, 253);
+    margin: 15px  0 20px 0;
+    border: 1px solid rgb(216, 215, 215);
     border-radius: 14px;
     justify-content: space-between;
+    box-shadow: 1px 1px 3px 1px rgb(186, 186, 186);
 }
 .contactlist img{
  width: 90px;
